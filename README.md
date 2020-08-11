@@ -1,6 +1,6 @@
 This Project is live at  => https://themoviedatabase-clone.web.app/
 
-Get Your API key at =>  https://developers.themoviedb.org/3/getting-started/introduction
+Get Your API key at =>  https://developers.themoviedb.org/3/getting-started/introduction and use that API key in request.js file
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
