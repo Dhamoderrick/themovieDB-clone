@@ -1,38 +1,549 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600&display=swap");
+body {
+  background-color: #f1f1f1;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.nav {
+  display: flex;
+  width: 100%;
+  height: 8vh;
+  background-color: #042441;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav_elements {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.nav_elements ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 30%;
+}
+.nav_elements li {
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: 900;
+  cursor: pointer;
+}
+li a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+button a {
+  color: whitesmoke;
+  text-decoration: none;
+}
+.nav_elements h5 {
+  background: -webkit-linear-gradient(#20bf55, #01baef);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bolder;
+  margin-left: 10rem;
+  font-size: 30px;
+}
+.oval {
+  height: 20px;
+  width: 50px;
+  background: linear-gradient(#20bf55, #01baef);
+  border-radius: 50px;
+  margin-left: 1rem;
+}
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+.search {
+  display: flex;
+  justify-content: center;
+}
+.search_banner {
+  background: linear-gradient(#09c5f9ad, #63a4ffb5), url("./banner.jpg");
+  width: 80%;
+  height: 40vh;
+  background-size: cover;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.search_banner p {
+  color: whitesmoke;
+  font-weight: bolder;
+  font-size: 40px;
+  margin-left: 1.5rem;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.field {
+  display: flex;
+  width: 90%;
+}
+.search_banner input {
+  margin-left: 1.5rem;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color: whitesmoke;
+  width: 90%;
+  border-radius: 40px;
+}
+.field button {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color: transparent;
+  margin-left: -40px;
+  border-radius: 40px;
+  width: 8rem;
+  font-size: 20px;
+  font-weight: 700;
+  color: whitesmoke;
+  background: linear-gradient(#20bf55, #01baef);
+}
+::placeholder {
+  font-size: 18px;
+  color: #a4a4a4;
+}
+form {
+  width: 100%;
+  margin-top: 1.5rem;
+}
+
+.container {
+  margin: 2rem;
+}
+.container p {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+}
+.card {
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  min-width: 25vh;
+  min-height: 25vh;
+  margin-right: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  border-radius: 5px;
+}
+.popularity {
+  position: absolute;
+  background-color: #042441;
+  height: 35px;
+  width: 35px;
+  border-radius: 50px;
+  color: white;
+  top: 17rem;
+  left: 0.7rem;
+  font-weight: 600;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.row {
+  object-fit: contain;
+  display: flex;
+  overflow-x: scroll;
+}
+.row::-webkit-scrollbar {
+  height: 4px;
+}
+.row::-webkit-scrollbar-track {
+  background: #eeeeee;
+  height: 5px;
+}
+.row::-webkit-scrollbar-thumb {
+  background: linear-gradient(#20bf55, #01baef);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card_content {
+  padding-left: 1rem;
+}
+.card_content h4 {
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.015em;
+  margin-bottom: 10px;
+  margin-top: 25px;
+}
+.card_content span {
+  margin-top: 4rem;
+  font-weight: 300;
+  color: #2b2b2b;
+}
+.card:hover {
+  box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.movie_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.footer {
+  height: 8vh;
+  width: 100%;
+  background-color: #042441;
+  color: whitesmoke;
+  font-size: 20px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 1.5rem;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.detail_banner {
+  margin: 2rem;
+}
+.detail_banner img {
+  max-width: 40vh;
+  border-radius: 5px;
+  position: relative;
+}
+.poster {
+  display: flex;
+  justify-content: space-around;
+  background: linear-gradient(#20bf55, #01baef);
+}
+
+.film_detail {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.film_detail h3 {
+  color: whitesmoke;
+  font-weight: 800;
+  font-size: 56px;
+  font-family: "Source Sans Pro", sans-serif;
+  margin-bottom: 1rem;
+}
+.film_detail .rating {
+  padding-top: 1rem;
+  font-size: 21px;
+  font-weight: 700;
+  color: whitesmoke;
+}
+.film_detail .geners {
+  width: auto;
+  display: flex;
+}
+.film_detail span {
+  margin-top: 1rem;
+  font-size: 20px;
+  font-weight: 400;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.film_detail h5 {
+  font-size: 21px;
+  color: white;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.film_detail p {
+  font-size: 16px;
+  color: white;
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 1.8rem;
+  letter-spacing: 0.054em;
+  font-weight: lighter;
+}
+.geners h4 {
+  background-color: rgb(60, 138, 255);
+  width: 7rem;
+  height: 2rem;
+  border-radius: 25px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  margin-right: 1rem;
+}
+.od {
+  display: flex;
+  flex-direction: column;
+  margin-left: 2rem;
+}
+.od h3 {
+  font-size: 20px;
+  color: #2b2b2b;
+  margin-bottom: 0.5rem;
+}
+.od div {
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+.od .keyword {
+  height: auto;
+  width: auto;
+  background-color: #868686;
+  color: whitesmoke;
+  border-radius: 41px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  padding: 7px;
+  font-weight: 300;
+}
+.out_key {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+.cast {
+  object-fit: contain;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin-left: 5rem;
+  max-width: 55%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.ch_card {
+  display: block;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  min-width: 10rem;
+  max-height: 15rem;
+  margin-right: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 7.5rem;
+  border-radius: 5px;
+}
+.ch_card img {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.cast::-webkit-scrollbar {
+  height: 4px;
+}
+.cast::-webkit-scrollbar-track {
+  background: #eeeeee;
+  height: 5px;
+}
+.cast::-webkit-scrollbar-thumb {
+  background: linear-gradient(#20bf55, #01baef);
+}
+.movie_details {
+  display: flex;
+}
+.other_details {
+  margin-left: 3rem;
+  margin-top: 3rem;
+  width: 34%;
+}
+.name_trailer {
+  display: flex;
+  align-items: center;
+}
+.name_trailer button {
+  margin-left: 2rem;
+  height: 20px;
+}
+.trailer {
+  display: flex;
+  margin: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+input {
+  outline: none;
+}
+@media only screen and (max-width: 450px) {
+  * {
+    scroll-behavior: unset;
   }
-  to {
-    transform: rotate(360deg);
+  .nav {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+  }
+  .nav_elements ul {
+    /* display: none; */
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 0.7rem;
+  }
+  .nav_elements {
+    display: flex;
+    /* align-items: center; */
+    flex-direction: column;
+    width: 100%;
+  }
+  .search_banner {
+    width: 100%;
+    height: 10%;
+    display: flex;
+  }
+  .search_banner p {
+    font-size: 20px;
+    margin-top: 1.5rem;
+  }
+  .search_banner input {
+    padding: 2px;
+  }
+  .field button {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: transparent;
+    margin-left: -40px;
+    border-radius: 40px;
+    width: 6rem;
+    font-size: 18px;
+    font-weight: 700;
+    color: whitesmoke;
+    background: linear-gradient(#20bf55, #01baef);
+  }
+  ::placeholder {
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .nav_elements h5 {
+    margin-left: 0rem;
+  }
+  .container p {
+    font-family: "Source Sans Pro", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+  }
+  .container {
+    margin: 1rem;
+  }
+  .card {
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* min-width: 20vh; */
+    /* min-height: 18vh; */
+    margin-right: 1.5rem;
+    /* margin-bottom: 1.5rem; */
+    margin-top: 1rem;
+    min-width: 10rem;
+    max-height: 23rem;
+    border-radius: 5px;
+    overflow-y: hidden;
+  }
+  .popularity {
+    position: absolute;
+    background-color: #042441;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    color: white;
+    top: 14rem;
+    left: 0.7rem;
+    font-weight: 600;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .mcard img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+  }
+  .mcard {
+    display: block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 40vh;
+    max-height: 40vh;
+    margin-right: 0.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 4.5rem;
+    border-radius: 10px;
+  }
+  .detail_banner {
+    margin: 1rem;
+  }
+  .poster {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(#20bf55, #01baef);
+  }
+  .name_trailer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .film_detail h3 {
+    color: whitesmoke;
+    font-weight: 600;
+    font-size: 40px;
+    font-family: "Source Sans Pro", sans-serif;
+    margin-bottom: 1rem;
+  }
+  .film_detail .geners {
+    width: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .film_detail .rating {
+    padding-top: 1rem;
+    font-size: 21px;
+    font-weight: 700;
+    color: whitesmoke;
+    text-align: center;
+  }
+  .film_detail p {
+    font-size: 15px;
+    /* width: 100%; */
+    color: white;
+    font-family: "Source Sans Pro", sans-serif;
+    line-height: 1.8rem;
+    letter-spacing: 0.054em;
+    font-weight: lighter;
+    margin-bottom: 1rem;
+  }
+  .movie_details {
+    display: flex;
+    flex-direction: column;
+  }
+  .cast {
+    object-fit: contain;
+    display: flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    margin-left: 1rem;
+    max-width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .other_details {
+    margin-left: 0rem;
+    margin-top: 1rem;
+    width: 100%;
+  }
+  .footer {
+    position: relative;
   }
 }
